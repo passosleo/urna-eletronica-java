@@ -22,13 +22,17 @@ public class Main {
         System.out.println("99 - Encerrar votação");
 
         do {
-                if (scanner.nextInt() == 99) {
+            if (scanner.hasNextInt()) {
+                var codigo = scanner.nextInt();
+                if (codigo == 99) {
                     urna.encerrarVotacao();
                 } else {
-                    urna.votar(scanner.nextInt());
-                    scanner.nextLine();
-
+                    urna.votar(codigo);
                 }
+            } else {
+                System.out.println("Por favor, insira um número válido!");
+                scanner.next();
+            }
         } while (urna.getStatus() == StatusVotacao.ABERTO);
     }
 }
