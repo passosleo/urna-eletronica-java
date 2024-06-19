@@ -35,7 +35,7 @@ public class UrnaService {
     }
 
     public void votar(int voto) {
-        if (this.status != StatusVotacao.ABERTO) {
+        if (this.status == StatusVotacao.FECHADO) {
             System.out.println("Votação encerrada, não é possível votar");
         }
 
