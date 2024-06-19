@@ -33,6 +33,6 @@ public class Main {
                 System.out.println("Por favor, insira um número válido!");
                 scanner.next();
             }
-        } while (urna.getStatus() == StatusVotacao.ABERTO);
+        } while (urna.getStatus() != StatusVotacao.FECHADO);
     }
 }
